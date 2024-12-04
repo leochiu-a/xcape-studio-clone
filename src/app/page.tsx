@@ -3,6 +3,7 @@
 import { ReactLenis } from "lenis/react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useLayoutEffect, useRef, useState } from "react";
+import TextReveal from "./components/text-reveal";
 
 const Page = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -93,10 +94,9 @@ const Page = () => {
           </div>
         </div>
       </motion.div>
-      <div className="h-screen bg-[#F1F1F1] flex items-center justify-center text-gray-950">
-        <h1 className="text-8xl font-semibold text-center max-w-[650px]">
-          Thank You
-        </h1>
+
+      <div className="bg-[#F1F1F1]">
+        <TextReveal />
       </div>
     </ReactLenis>
   );
