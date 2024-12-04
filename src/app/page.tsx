@@ -4,6 +4,7 @@ import { ReactLenis } from "lenis/react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useLayoutEffect, useRef, useState } from "react";
 import TextReveal from "./components/text-reveal";
+import HeresNowText from "./components/heres-now-text";
 
 const Page = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -97,6 +98,10 @@ const Page = () => {
 
       <div className="bg-[#F1F1F1]">
         <TextReveal />
+      </div>
+
+      <div className="h-screen bg-gray-950 flex items-center justify-center text-white relative">
+        <HeresNowText />
       </div>
     </ReactLenis>
   );
