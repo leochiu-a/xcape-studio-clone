@@ -1,101 +1,105 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import { ReactLenis } from "lenis/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useLayoutEffect, useRef, useState } from "react";
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+const Page = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [numberOfCards, setNumberOfCards] = useState(0);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  // h1 - 1
+  const opacity1 = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.4, 0.5],
+    [0, 1, 1, 0]
   );
-}
+  const blur1 = useTransform(
+    scrollYProgress,
+    [0, 0.25, 0.4, 0.5],
+    [20, 0, 0, 20]
+  );
+  const filter1 = useTransform(() => `blur(${blur1.get()}px)`);
+  // h1 - 2
+  const opacity2 = useTransform(scrollYProgress, [0.4, 0.45], [0, 1]);
+  const blur2 = useTransform(scrollYProgress, [0.4, 0.45], [20, 0]);
+  const filter2 = useTransform(() => `blur(${blur2.get()}px)`);
+
+  // cards reveal animation
+  const scale = useTransform(scrollYProgress, [0.4, 0.5], [0.02, 1.25]);
+
+  useLayoutEffect(() => {
+    function calculateCards() {
+      if (ref.current) {
+        const h = ref.current.clientHeight / 2;
+        const w = ref.current.clientWidth;
+        const cardHeight = 300;
+        const cardWidth = 200;
+
+        const rows = Math.ceil(h / cardHeight); // 確保超過高度
+        const columns = Math.ceil(w / cardWidth) + 1; // 確保超過寬度
+
+        // 總卡片數量
+        setNumberOfCards(rows * columns);
+      }
+    }
+
+    calculateCards();
+    window.addEventListener("resize", calculateCards);
+
+    return () => {
+      window.removeEventListener("resize", calculateCards);
+    };
+  }, []);
+
+  return (
+    <ReactLenis root>
+      <div className="h-screen bg-gray-950 flex items-center justify-center text-white relative">
+        <h1 className="text-8xl font-semibold text-center max-w-[650px]">
+          FRAMER MOTION ANIMATION
+        </h1>
+      </div>
+      <motion.div className="h-[200vh] bg-gray-950" ref={ref}>
+        <div className="max-w-screen h-screen flex items-center justify-center sticky top-0 overflow-clip">
+          <motion.h1
+            className="text-8xl font-semibold text-center max-w-[650px] text-white absolute z-10"
+            style={{
+              opacity: opacity1,
+              filter: filter1,
+            }}
+          >
+            ANYONE CAN BUILD FAST TODAY
+          </motion.h1>
+          <motion.h1
+            className="text-8xl font-semibold text-center max-w-[700px] text-gray-950 absolute z-10"
+            style={{
+              opacity: opacity2,
+              filter: filter2,
+            }}
+          >
+            Let&apos;s build with Framer Motion
+          </motion.h1>
+          <div className="absolute min-h-screen w-[120%] grid grid-cols-[repeat(auto-fill,200px)] grid-rows-[repeat(auto-fill,300px)] place-content-center">
+            {Array.from({ length: numberOfCards }).map((_, index) => (
+              <motion.div
+                key={index}
+                className="rounded-xl bg-[#F1F1F1]"
+                style={{ scale }}
+              ></motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+      <div className="h-screen bg-[#F1F1F1] flex items-center justify-center text-gray-950">
+        <h1 className="text-8xl font-semibold text-center max-w-[650px]">
+          Thank You
+        </h1>
+      </div>
+    </ReactLenis>
+  );
+};
+
+export default Page;
