@@ -6,6 +6,8 @@ import { useLayoutEffect, useRef, useState } from "react";
 import TextReveal from "./components/text-reveal";
 import HeresNowText from "./components/heres-now-text";
 import HowToBegin from "./components/how-to-begin";
+import Anymore from "./components/anymore";
+import TheEnd from "./components/the-end";
 
 const Page = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -106,6 +108,8 @@ const Page = () => {
       </div>
 
       <HowToBegin />
+      <Anymore />
+      <TheEnd />
     </ReactLenis>
   );
 };
