@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useLayoutEffect, useRef, useState } from "react";
 import TextReveal from "./components/text-reveal";
 import HeresNowText from "./components/heres-now-text";
+import HowToBegin from "./components/how-to-begin";
 
 const Page = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -103,6 +104,8 @@ const Page = () => {
       <div className="h-screen bg-gray-950 flex items-center justify-center text-white relative">
         <HeresNowText />
       </div>
+
+      <HowToBegin />
     </ReactLenis>
   );
 };
