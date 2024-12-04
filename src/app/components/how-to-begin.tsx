@@ -1,12 +1,9 @@
 import {
   AnimatePresence,
   motion,
-  useMotionValue,
   useMotionValueEvent,
   useScroll,
   useTransform,
-  Variant,
-  Variants,
 } from "motion/react";
 import { useRef, useState } from "react";
 
@@ -38,7 +35,6 @@ const HowToBegin = () => {
       setCurrent(2);
     }
   });
-  const contents = [];
 
   return (
     <div className="h-[250vh] bg-gray-950" ref={ref}>
@@ -120,7 +116,7 @@ const HowToBegin = () => {
                 corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
                 consequatur? Quis autem vel eum iure reprehenderit qui in ea
                 voluptate velit esse quam nihil molestiae consequatur, vel illum
-                qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                qui dolorem eum fugiat quo voluptas nulla pariatur?
               </motion.div>
             )}
           </AnimatePresence>

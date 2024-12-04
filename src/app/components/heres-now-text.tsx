@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useInView } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -39,7 +39,7 @@ const HeresNowText = () => {
 
       return () => clearInterval(interval);
     }
-  }, [displayText, trigger]);
+  }, [displayText, trigger, text]);
 
   return (
     <h1
