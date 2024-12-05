@@ -3,11 +3,13 @@
 import { ReactLenis } from "lenis/react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useLayoutEffect, useRef, useState } from "react";
+
 import TextReveal from "./components/text-reveal";
 import HeresNowText from "./components/heres-now-text";
 import HowToBegin from "./components/how-to-begin";
 import Anymore from "./components/anymore";
 import TheEnd from "./components/the-end";
+import Hero from "./components/hero";
 
 const Page = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -62,11 +64,8 @@ const Page = () => {
 
   return (
     <ReactLenis root>
-      <div className="h-screen bg-gray-950 flex items-center justify-center text-white relative">
-        <h1 className="text-8xl font-semibold text-center max-w-[650px]">
-          FRAMER MOTION ANIMATION
-        </h1>
-      </div>
+      <Hero />
+
       <motion.div className="h-[200vh] bg-gray-950" ref={ref}>
         <div className="max-w-screen h-screen flex items-center justify-center sticky top-0 overflow-clip">
           <motion.h1
