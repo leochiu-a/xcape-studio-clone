@@ -45,7 +45,7 @@ const Anymore = () => {
   const style9 = useDisplay(scrollYProgress, [0.5, 0.6]);
 
   return (
-    <motion.div ref={ref} style={{ background }}>
+    <motion.div ref={ref} style={{ background }} className="overflow-hidden">
       <div className="space-y-4 max-w-7xl mx-auto w-full pt-20 py-20">
         <motion.h1
           className="text-8xl font-semibold"
