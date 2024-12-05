@@ -70,7 +70,7 @@ const HowToBegin = () => {
             {current === 0 && (
               <motion.div
                 key={0}
-                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl"
+                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl text-white"
                 initial={{ opacity: 0, filter: "blur(20px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(20px)" }}
@@ -87,7 +87,7 @@ const HowToBegin = () => {
             {current === 1 && (
               <motion.div
                 key={1}
-                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl"
+                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl text-white"
                 initial={{ opacity: 0, filter: "blur(20px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(20px)" }}
@@ -107,7 +107,7 @@ const HowToBegin = () => {
             {current === 2 && (
               <motion.div
                 key={2}
-                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl"
+                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl text-white"
                 initial={{ opacity: 0, filter: "blur(20px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(20px)" }}

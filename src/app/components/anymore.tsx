@@ -46,7 +46,7 @@ const Anymore = () => {
 
   return (
     <motion.div ref={ref} style={{ background }}>
-      <div className="space-y-4 max-w-7xl mx-auto w-full mt-20 py-20">
+      <div className="space-y-4 max-w-7xl mx-auto w-full pt-20 py-20">
         <motion.h1
           className="text-8xl font-semibold"
           style={{ ...style1, color }}
