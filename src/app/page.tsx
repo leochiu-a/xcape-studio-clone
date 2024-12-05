@@ -9,7 +9,7 @@ import Anymore from "./components/anymore";
 import TheEnd from "./components/the-end";
 import Hero from "./components/hero";
 import BuildFast from "./components/build-fast";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import AnchorMenu from "./components/anchor-menu";
 
 const Page = () => {
@@ -19,6 +19,11 @@ const Page = () => {
   const heresNowTextRef = useRef<HTMLDivElement>(null);
   const howToBeginRef = useRef<HTMLDivElement>(null);
   const anymoreRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // prevent history restore position
+    window.history.scrollRestoration = "manual";
+  }, []);
 
   return (
     <ReactLenis root>
