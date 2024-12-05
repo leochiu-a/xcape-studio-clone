@@ -12,7 +12,7 @@ const TheEnd = () => {
       </motion.div>
 
       <div className="uppercase text-8xl mt-20 mx-auto text-center text-gray-950 font-semibold">
-        LEO.CHIU.WEB
+        LEO.WEB.DEV
       </div>
     </div>
   );
