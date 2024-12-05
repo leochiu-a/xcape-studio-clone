@@ -10,7 +10,7 @@ Live Demo: https://xscape-studio-clone.vercel.app/
 * Tailwind
 * Framer Motion
 
-🚀 Getting Started
+## 🚀 Getting Started
 
 1. Clone the repository:
 
@@ -30,3 +30,5 @@ pnpm i
 ```
 pnpm dev
 ```
+
+Open http://localhost:3000 to view your application.
