@@ -42,21 +42,23 @@ const HeresNowText = () => {
   }, [displayText, trigger, text]);
 
   return (
-    <h1
-      className="text-8xl font-semibold text-center overflow-hidden font-mono py-2"
-      onMouseEnter={triggerAnimation}
-    >
-      {displayText.map((char, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-        >
-          {char}
-        </motion.span>
-      ))}
-    </h1>
+    <div className="h-screen bg-gray-950 flex items-center justify-center text-white relative">
+      <h1
+        className="text-8xl font-semibold text-center overflow-hidden font-mono py-2"
+        onMouseEnter={triggerAnimation}
+      >
+        {displayText.map((char, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </h1>
+    </div>
   );
 };
 

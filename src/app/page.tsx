@@ -14,17 +14,9 @@ const Page = () => {
   return (
     <ReactLenis root>
       <Hero />
-
       <BuildFast />
-
-      <div className="bg-[#F1F1F1]">
-        <TextReveal />
-      </div>
-
-      <div className="h-screen bg-gray-950 flex items-center justify-center text-white relative">
-        <HeresNowText />
-      </div>
-
+      <TextReveal />
+      <HeresNowText />
       <HowToBegin />
       <Anymore />
       <TheEnd />
