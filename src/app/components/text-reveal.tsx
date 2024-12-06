@@ -1,13 +1,7 @@
 "use client";
 
 import { PropsWithChildren, useMemo, useRef } from "react";
-import {
-  motion,
-  MotionValue,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "motion/react";
+import { motion, MotionValue, useScroll, useTransform } from "motion/react";
 import { useWindowSize } from "usehooks-ts";
 
 type WordType = { word: string; range: [number, number] };
