@@ -11,6 +11,7 @@ import Hero from "./components/hero";
 import BuildFast from "./components/build-fast";
 import { useEffect, useRef } from "react";
 import AnchorMenu from "./components/anchor-menu";
+import TextMarquee from "./components/text-marquee";
 
 const Page = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -29,6 +30,7 @@ const Page = () => {
     <ReactLenis root>
       <div ref={heroRef}>
         <Hero />
+        <TextMarquee />
       </div>
       <div ref={buildFastRef}>
         <BuildFast />
