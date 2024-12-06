@@ -48,7 +48,7 @@ const TextMarquee = () => {
   }, []);
 
   return (
-    <div className="bg-gray-950 text-white overflow-hidden whitespace-nowrap">
+    <div className="overflow-hidden whitespace-nowrap bg-gray-950 text-white">
       <motion.div className="inline-block text-2xl" style={{ x }}>
         {Array.from({ length: repetition }).map((_, i) => (
           <span key={i} ref={textRef}>

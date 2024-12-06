@@ -5,7 +5,7 @@ const HeroMD = () => {
   return (
     <>
       <motion.h1
-        className="heading-lg text-center max-w-[1200px] origin-center absolute"
+        className="heading-lg absolute max-w-[1200px] origin-center text-center"
         initial={{ lineHeight: "120px" }}
         whileInView={{ lineHeight: "200px" }}
         viewport={{ once: true }}
@@ -14,7 +14,7 @@ const HeroMD = () => {
         FRAMER MOTION ANIMATION
       </motion.h1>
       <motion.div
-        className="text-3xl text-center max-w-[850px] origin-center absolute leading-[200px]"
+        className="absolute max-w-[850px] origin-center text-center text-3xl leading-[200px]"
         initial={{ opacity: 0, filter: "blur(20px)" }}
         whileInView={{ opacity: 1, filter: "blur(0px)" }}
         viewport={{ once: true }}
@@ -32,7 +32,7 @@ const HeroXS = () => {
   return (
     <>
       <motion.h1
-        className="heading-lg text-center max-w-[1200px]"
+        className="heading-lg max-w-[1200px] text-center"
         initial={{ opacity: 0, filter: "blur(20px)" }}
         whileInView={{ opacity: 1, filter: "blur(0px)" }}
         viewport={{ once: true }}
@@ -41,7 +41,7 @@ const HeroXS = () => {
         FRAMER MOTION ANIMATION
       </motion.h1>
       <motion.div
-        className="text-3xl text-center max-w-[850px]"
+        className="max-w-[850px] text-center text-3xl"
         initial={{ opacity: 0, filter: "blur(20px)" }}
         whileInView={{ opacity: 1, filter: "blur(0px)" }}
         viewport={{ once: true }}
@@ -58,10 +58,10 @@ const HeroXS = () => {
 const Hero = () => {
   return (
     <div className="h-[100vh] bg-gray-950 text-white">
-      <div className="hidden md:grid relative w-full h-full place-items-center">
+      <div className="relative hidden h-full w-full place-items-center md:grid">
         <HeroMD />
       </div>
-      <div className="block md:hidden relative w-full h-full place-content-center">
+      <div className="relative block h-full w-full place-content-center md:hidden">
         <HeroXS />
       </div>
     </div>

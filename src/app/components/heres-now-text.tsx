@@ -24,9 +24,9 @@ const HeresNowText = () => {
               l === " "
                 ? l
                 : i <= iterations.current
-                ? text[i]
-                : alphabets[getRandomInt(26)]
-            )
+                  ? text[i]
+                  : alphabets[getRandomInt(26)],
+            ),
           );
           iterations.current = iterations.current + 0.5;
         } else {
@@ -42,9 +42,9 @@ const HeresNowText = () => {
   }, [displayText, trigger, text]);
 
   return (
-    <div className="h-screen bg-gray-950 flex items-center justify-center text-white relative">
+    <div className="relative flex h-screen items-center justify-center bg-gray-950 text-white">
       <h1
-        className="heading-md text-center overflow-hidden font-mono py-2"
+        className="heading-md overflow-hidden py-2 text-center font-mono"
         onMouseEnter={triggerAnimation}
       >
         {displayText.map((char, index) => (

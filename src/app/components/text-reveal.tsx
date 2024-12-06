@@ -40,30 +40,30 @@ const TextRevealByWord = ({ paragraphs }: { paragraphs: string[] }) => {
   const opacityOfText = useTransform(
     scrollYProgress,
     [0, 0.5, 0.6],
-    [1, 1, 0.2]
+    [1, 1, 0.2],
   );
 
   const preventShowBorderRadius = 50;
   const width = useTransform(
     scrollYProgress,
     [0.6, 1],
-    [400, windowWidth + preventShowBorderRadius]
+    [400, windowWidth + preventShowBorderRadius],
   );
   const height = useTransform(
     scrollYProgress,
     [0.6, 1],
-    [300, windowHeight + preventShowBorderRadius]
+    [300, windowHeight + preventShowBorderRadius],
   );
   const opacityOfCard = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
 
   return (
-    <div className="h-[200vh] relative" ref={ref}>
+    <div className="relative h-[200vh]" ref={ref}>
       <div className="sticky top-0 h-screen overflow-clip">
-        <div className="space-y-2 pt-12 max-w-3xl mx-auto">
+        <div className="mx-auto max-w-3xl space-y-2 pt-12">
           {paragraphWords.map((paragraph, pIndex) => (
             <motion.p
               key={pIndex}
-              className="text-xl md:text-2xl lg:text-4xl p-3 flex flex-wrap"
+              className="flex flex-wrap p-3 text-xl md:text-2xl lg:text-4xl"
               style={{ opacity: opacityOfText }}
             >
               {paragraph.map((word, wIndex) => {
@@ -81,12 +81,12 @@ const TextRevealByWord = ({ paragraphs }: { paragraphs: string[] }) => {
           ))}
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <motion.div
-            className="bg-gray-950 rounded-xl grid place-content-center"
+            className="grid place-content-center rounded-xl bg-gray-950"
             style={{ width, height, opacity: opacityOfCard }}
           >
-            <div className="text-xl md:text-2xl lg:text-3xl text-white w-[400px] h-[300px] p-10">
+            <div className="h-[300px] w-[400px] p-10 text-xl text-white md:text-2xl lg:text-3xl">
               Lorem Ipsum is not simply random text. It has roots in a piece of
               classical Latin literature from 45 BC.
             </div>

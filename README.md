@@ -6,9 +6,9 @@ Live Demo: https://xscape-studio-clone.vercel.app/
 
 ## 🛠 Tech Stack
 
-* Next.js 14
-* Tailwind
-* Framer Motion
+- Next.js 14
+- Tailwind
+- Framer Motion
 
 ## 🚀 Getting Started
 

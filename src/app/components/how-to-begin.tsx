@@ -38,8 +38,8 @@ const HowToBeginMd = () => {
 
   return (
     <div className="h-[250vh] bg-gray-950" ref={ref}>
-      <div className="h-screen sticky top-0 flex items-center max-w-7xl mx-auto w-full px-10 xl:px-4">
-        <div className="flex items-center justify-between gap-20 w-full">
+      <div className="sticky top-0 mx-auto flex h-screen w-full max-w-7xl items-center px-10 xl:px-4">
+        <div className="flex w-full items-center justify-between gap-20">
           <div className="space-y-8">
             <h1 className="heading-md text-white">Framer & Motion</h1>
             <motion.h1
@@ -68,7 +68,7 @@ const HowToBeginMd = () => {
             {current === 0 && (
               <motion.div
                 key={0}
-                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl text-white"
+                className="w-[360px] rounded-2xl border-[1px] border-white p-8 text-xl text-white"
                 initial={{ opacity: 0, filter: "blur(20px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(20px)" }}
@@ -85,7 +85,7 @@ const HowToBeginMd = () => {
             {current === 1 && (
               <motion.div
                 key={1}
-                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl text-white"
+                className="w-[360px] rounded-2xl border-[1px] border-white p-8 text-xl text-white"
                 initial={{ opacity: 0, filter: "blur(20px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(20px)" }}
@@ -105,7 +105,7 @@ const HowToBeginMd = () => {
             {current === 2 && (
               <motion.div
                 key={2}
-                className="rounded-2xl border-white border-[1px] w-[360px] p-8 text-xl text-white"
+                className="w-[360px] rounded-2xl border-[1px] border-white p-8 text-xl text-white"
                 initial={{ opacity: 0, filter: "blur(20px)" }}
                 animate={{ opacity: 1, filter: "blur(0px)" }}
                 exit={{ opacity: 0, filter: "blur(20px)" }}
@@ -126,10 +126,10 @@ const HowToBeginMd = () => {
 
 const HowToBeginXS = () => {
   return (
-    <div className="bg-gray-950 grid gap-8 justify-center px-10">
+    <div className="grid justify-center gap-8 bg-gray-950 px-10">
       <motion.div
         key={0}
-        className="rounded-2xl border-white border-[1px] p-8 text-xl text-white"
+        className="rounded-2xl border-[1px] border-white p-8 text-xl text-white"
         initial={{ opacity: 0, filter: "blur(10px)", translateY: "40px" }}
         whileInView={{ opacity: 1, filter: "blur(0px)", translateY: "0px" }}
         transition={{ duration: 1, ease: "easeIn" }}
@@ -148,7 +148,7 @@ const HowToBeginXS = () => {
       </motion.div>
       <motion.div
         key={1}
-        className="rounded-2xl border-white border-[1px] p-8 text-xl text-white"
+        className="rounded-2xl border-[1px] border-white p-8 text-xl text-white"
         initial={{ opacity: 0, filter: "blur(10px)", translateY: "40px" }}
         whileInView={{ opacity: 1, filter: "blur(0px)", translateY: "0px" }}
         transition={{ duration: 1, ease: "easeIn" }}
@@ -169,7 +169,7 @@ const HowToBeginXS = () => {
       </motion.div>
       <motion.div
         key={2}
-        className="rounded-2xl border-white border-[1px] p-8 text-xl text-white"
+        className="rounded-2xl border-[1px] border-white p-8 text-xl text-white"
         initial={{ opacity: 0, filter: "blur(10px)", translateY: "40px" }}
         whileInView={{ opacity: 1, filter: "blur(0px)", translateY: "0px" }}
         transition={{ duration: 1, ease: "easeIn" }}

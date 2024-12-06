@@ -13,13 +13,13 @@ import { RefObject, useEffect, useState } from "react";
 const Active = ({ width }: { width: MotionValue<string> }) => {
   return (
     <motion.div
-      className="absolute border-[1px] rounded-md border-white w-full h-full top-0 left-0"
+      className="absolute left-0 top-0 h-full w-full rounded-md border-[1px] border-white"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <motion.div
-        className="absolute h-full top-0 left-0 bg-white"
+        className="absolute left-0 top-0 h-full bg-white"
         style={{ width }}
       ></motion.div>
     </motion.div>
@@ -104,16 +104,16 @@ const AnchorMenu = ({
           exit={{ opacity: 0, filter: "blur(10px)" }}
           transition={{ duration: 0.3 }}
         >
-          <div className="bg-gray-300 bg-opacity-30 p-1 backdrop-blur-lg mx-auto w-fit rounded-md flex gap-1">
+          <div className="mx-auto flex w-fit gap-1 rounded-md bg-gray-300 bg-opacity-30 p-1 backdrop-blur-lg">
             <button
-              className="px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600 rounded-md relative overflow-hidden"
+              className="relative overflow-hidden rounded-md px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600"
               onClick={handleScrollIntoView(heroRef)}
             >
               <span className="relative z-10">WE&apos;RE</span>
               {hero.isInView && <Active width={hero.width} />}
             </button>
             <button
-              className="px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600 rounded-md relative overflow-hidden"
+              className="relative overflow-hidden rounded-md px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600"
               onClick={handleScrollIntoView(buildFastRef)}
             >
               <span className="relative z-10">NOT</span>
@@ -122,7 +122,7 @@ const AnchorMenu = ({
               )}
             </button>
             <button
-              className="px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600 rounded-md relative overflow-hidden"
+              className="relative overflow-hidden rounded-md px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600"
               onClick={handleScrollIntoView(textRevealRef)}
             >
               <span className="relative z-10">LOOKING</span>
@@ -131,7 +131,7 @@ const AnchorMenu = ({
               )}
             </button>
             <button
-              className="px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600 rounded-md relative overflow-hidden"
+              className="relative overflow-hidden rounded-md px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600"
               onClick={handleScrollIntoView(heresNowTextRef)}
             >
               <span className="relative z-10">FOR</span>
@@ -140,7 +140,7 @@ const AnchorMenu = ({
               )}
             </button>
             <button
-              className="px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600 rounded-md relative overflow-hidden"
+              className="relative overflow-hidden rounded-md px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600"
               onClick={handleScrollIntoView(howToBeginRef)}
             >
               <span className="relative z-10">CLIENT</span>
@@ -149,7 +149,7 @@ const AnchorMenu = ({
               )}
             </button>
             <button
-              className="px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600 rounded-md relative overflow-hidden"
+              className="relative overflow-hidden rounded-md px-4 py-2 text-gray-400 transition duration-300 hover:bg-gray-600"
               onClick={handleScrollIntoView(anymoreRef)}
             >
               <span className="relative z-10">ANYMORE</span>
