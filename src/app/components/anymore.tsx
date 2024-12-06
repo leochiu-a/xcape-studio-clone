@@ -46,57 +46,57 @@ const Anymore = () => {
 
   return (
     <motion.div ref={ref} style={{ background }} className="overflow-hidden">
-      <div className="space-y-4 max-w-7xl mx-auto w-full pt-20 py-20">
+      <div className="space-y-4 max-w-7xl mx-auto w-full py-20 px-10 xl:px-4">
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style1, color }}
         >
           THE
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style2, color }}
         >
           STANDARD
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style3, color }}
         >
           LOREM
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style4, color }}
         >
           IPSUM
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style5, color }}
         >
           PASSAGE
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style6, color }}
         >
           USED
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style7, color }}
         >
           SINCE
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style8, color }}
         >
           THE
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold"
+          className="heading-md"
           style={{ ...style9, color }}
         >
           1500s

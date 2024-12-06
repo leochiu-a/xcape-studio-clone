@@ -56,7 +56,7 @@ const BuildFast = () => {
     <motion.div className="h-[200vh] bg-gray-950" ref={ref}>
       <div className="max-w-screen h-screen flex items-center justify-center sticky top-0 overflow-clip">
         <motion.h1
-          className="text-8xl font-semibold text-center max-w-[650px] text-white absolute z-10"
+          className="heading-md text-center max-w-[500px] md:max-w-[650px] text-white absolute z-10"
           style={{
             opacity: opacity1,
             filter: filter1,
@@ -65,7 +65,7 @@ const BuildFast = () => {
           ANYONE CAN BUILD FAST TODAY
         </motion.h1>
         <motion.h1
-          className="text-8xl font-semibold text-center max-w-[700px] text-gray-950 absolute z-10"
+          className="heading-md text-center max-w-[400px] md:max-w-[700px] text-gray-950 absolute z-10"
           style={{
             opacity: opacity2,
             filter: filter2,

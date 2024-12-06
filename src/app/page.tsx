@@ -47,14 +47,16 @@ const Page = () => {
       </div>
       <TheEnd />
 
-      <AnchorMenu
-        heroRef={heroRef}
-        buildFastRef={buildFastRef}
-        textRevealRef={textRevealRef}
-        heresNowTextRef={heresNowTextRef}
-        howToBeginRef={howToBeginRef}
-        anymoreRef={anymoreRef}
-      />
+      <div className="hidden md:block">
+        <AnchorMenu
+          heroRef={heroRef}
+          buildFastRef={buildFastRef}
+          textRevealRef={textRevealRef}
+          heresNowTextRef={heresNowTextRef}
+          howToBeginRef={howToBeginRef}
+          anymoreRef={anymoreRef}
+        />
+      </div>
     </ReactLenis>
   );
 };

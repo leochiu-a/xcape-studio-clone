@@ -44,7 +44,7 @@ const HeresNowText = () => {
   return (
     <div className="h-screen bg-gray-950 flex items-center justify-center text-white relative">
       <h1
-        className="text-8xl font-semibold text-center overflow-hidden font-mono py-2"
+        className="heading-md text-center overflow-hidden font-mono py-2"
         onMouseEnter={triggerAnimation}
       >
         {displayText.map((char, index) => (

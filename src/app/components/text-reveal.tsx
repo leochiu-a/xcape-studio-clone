@@ -1,7 +1,13 @@
 "use client";
 
 import { PropsWithChildren, useMemo, useRef } from "react";
-import { motion, MotionValue, useScroll, useTransform } from "motion/react";
+import {
+  motion,
+  MotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "motion/react";
 import { useWindowSize } from "usehooks-ts";
 
 type WordType = { word: string; range: [number, number] };
@@ -43,8 +49,17 @@ const TextRevealByWord = ({ paragraphs }: { paragraphs: string[] }) => {
     [1, 1, 0.2]
   );
 
-  const width = useTransform(scrollYProgress, [0.6, 1], [400, windowWidth]);
-  const height = useTransform(scrollYProgress, [0.6, 1], [300, windowHeight]);
+  const preventShowBorderRadius = 50;
+  const width = useTransform(
+    scrollYProgress,
+    [0.6, 1],
+    [400, windowWidth + preventShowBorderRadius]
+  );
+  const height = useTransform(
+    scrollYProgress,
+    [0.6, 1],
+    [300, windowHeight + preventShowBorderRadius]
+  );
   const opacityOfCard = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
 
   return (
@@ -54,7 +69,7 @@ const TextRevealByWord = ({ paragraphs }: { paragraphs: string[] }) => {
           {paragraphWords.map((paragraph, pIndex) => (
             <motion.p
               key={pIndex}
-              className="text-4xl p-3 flex flex-wrap"
+              className="text-xl md:text-2xl lg:text-4xl p-3 flex flex-wrap"
               style={{ opacity: opacityOfText }}
             >
               {paragraph.map((word, wIndex) => {
@@ -77,7 +92,7 @@ const TextRevealByWord = ({ paragraphs }: { paragraphs: string[] }) => {
             className="bg-gray-950 rounded-xl grid place-content-center"
             style={{ width, height, opacity: opacityOfCard }}
           >
-            <div className="text-3xl text-white w-[400px] h-[300px] p-10">
+            <div className="text-xl md:text-2xl lg:text-3xl text-white w-[400px] h-[300px] p-10">
               Lorem Ipsum is not simply random text. It has roots in a piece of
               classical Latin literature from 45 BC.
             </div>
