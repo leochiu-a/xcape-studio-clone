@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 const TheEnd = () => {
   return (
-    <div className="bg-[#F1F1F1] py-20">
+    <div className="bg-[#F1F1F1] py-10">
       <motion.div
         className="heading-md rounded-3xl w-[90%] uppercase bg-gray-950 p-8 lg:p-20 mx-auto text-center color text-white"
         whileHover={{ scale: 1.05 }}
